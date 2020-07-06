@@ -1,0 +1,55 @@
+.index_swiper {
+  swiper {
+    width: 750rpx;
+    height: 340rpx;
+    image {
+      width: 100%;
+    }
+  }
+}
+.index_cate {
+  display: flex;
+  navigator {
+    flex: 1;
+    padding: 20rpx;
+    image {
+      width: 100%;
+    }
+  }
+}
+.index_floor {
+  .floor_group {
+    .floor_title {
+      padding: 10rpx 0;
+      image {
+        width: 100%;
+      }
+    }
+    .floor_list {
+      // 清楚浮动
+      overflow: hidden;
+      navigator {
+        float: left;
+        width: 33.33%;
+        /* 设置后四个超链接的图片,这里直接给navigator设置,后面image直接100%继承就可以 */
+        &:nth-last-child(-n+4) {
+          // 原图的宽高 232 *386 
+          // 232 / 386 = 33.33vw / height
+          // 第一张图片的高度为 height: 33.33vw *386 / 232
+          // 后四张图片的高度为第一张图片的高度的一半
+          height: 33.33vw * 386 / 232 / 2;
+          // 设置左侧留白
+          border-left: 10rpx solid #fff;
+        }
+        // 2, 3两张图片的超链接设置底部的留白
+        &:nth-child(2), &:nth-child(3) {
+          border-bottom: 10rpx solid #fff;
+        }
+        image{
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
