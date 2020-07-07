@@ -1,5 +1,6 @@
 // pages/category/index.js
 import { request } from "../../request/index.js";
+import regeneratorRuntime from '../../lib/runtime/runtime.js';
 Page({
    /**
    * 页面的初始数据
@@ -44,7 +45,7 @@ Page({
       this.getCates();
     } else {
       // 有旧的数据 暂时定义一个过期时间 10s 改成5分钟
-      if (Date.now() - Cates.time > 1000 *100) {
+      if (Date.now() - Cates.time > 1000 *10) {
         // 重新发送请求
         this.getCates();
       } else {
@@ -60,23 +61,44 @@ Page({
     }
   },
   // 获取商品分类的数据
-  getCates() {
-    request({url: '/categories'})
-    .then(res => {
-      this.Cates = res.data.message;
-      // 把接口的数据存入到本地存储中
-      wx.setStorageSync("cates", {time: Date.now(), data: this.Cates});
+  // getCates() {
+  //   request({url: '/categories'})
+  //   .then(res => {
+  //     this.Cates = res.data.message;
+  //     // 把接口的数据存入到本地存储中
+  //     wx.setStorageSync("cates", {time: Date.now(), data: this.Cates});
 
-      // 构造左侧的大菜单数据
-      let leftMenuList = this.Cates.map(v => v.cat_name);
-      // 构造右侧的商品数据
-      let rightContent = this.Cates[0].children;
-      this.setData({
-        leftMenuList,
-        rightContent
-      })
+  //     // 构造左侧的大菜单数据
+  //     let leftMenuList = this.Cates.map(v => v.cat_name);
+  //     // 构造右侧的商品数据
+  //     let rightContent = this.Cates[0].children;
+  //     this.setData({
+  //       leftMenuList,
+  //       rightContent
+  //     })
+  //   })
+  // },
+  /**
+   * 使用es7 的async await来发送请求
+   */
+  async getCates() {
+    const res = await request({url: '/categories'});
+    // this.Cates = res.data.message;
+    console.log('商品分类的结果', res);
+    this.Cates = res;
+    // 把接口的数据存入到本地存储中
+    wx.setStorageSync("cates", {time: Date.now(), data: this.Cates});
+
+    // 构造左侧的大菜单数据
+    let leftMenuList = this.Cates.map(v => v.cat_name);
+    // 构造右侧的商品数据
+    let rightContent = this.Cates[0].children;
+    this.setData({
+      leftMenuList,
+      rightContent
     })
   },
+
   // 切换侧边栏的菜单的点击事件
   handleItemTap(e) {
     /**
@@ -87,10 +109,10 @@ Page({
     const { index } = e.currentTarget.dataset;
     // 构造右侧的商品数据
     let rightContent = this.Cates[index].children;
-    // 重新设置 右侧内容的scroll-view 标签的距离顶部的距离
     this.setData({
       currentIndex: index,
       rightContent,
+      // 重新设置 右侧内容的scroll-view 标签的距离顶部的距离
       scrollTop: 0
     })
   }
