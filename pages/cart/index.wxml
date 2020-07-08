@@ -1,7 +1,47 @@
 <!-- 收货地址 -->
 <view class="recive_address_row">
-	<view class="address_btn">
+	<!-- 当收货地址 不存在 按钮显示  对象 空对象 boolean 类型也是true-->
+	<view class="address_btn" wx:if="{{!address.userName}}">
 		<button bindtap="handleChooseAddress" type="primary" plain>获取收货地址</button>
+	</view>
+	<!-- 当收货地址 存在 详细信息就显示 -->
+	<view wx:else class="address_info">
+		<view class="user_info">
+			<view>{{address.userName}}</view>
+			<view>{{address.all}}</view>
+		</view>
+		<view class="user_phone">{{address.telNumber}}</view>
+	</view>
+</view>
+
+<!-- 购物车的内容 -->
+<view class="cart_content">
+	<view class="cart_title">购物车</view>
+	<view class="cart_main">
+		<view class="cart_item">
+			<!-- 复选框 -->
+			<view class="cart_chk_wrap">
+				<checkbox-group>
+					<checkbox/>
+				</checkbox-group>
+			</view>
+			<!-- 商品图片 -->
+			<navigator class="cart_img_wrap">
+				<image mode="widthFix" src="http://hbimg.b0.upaiyun.com/e1b1467beea0a9c7d6a56b32bac6d7e5dcd914f7c3e6-YTwUd6_fw658" />
+			</navigator>
+			<!-- 商品信息 -->
+			<view class="cart_info_wrap">
+				<view class="goods_name">策略四季歌独孤伽罗搞得类似寄过来的高科技的了</view>
+				<view class="goods_price_wrap">
+					<view class="goods_price">￥999</view>
+					<view class="cart_num_tool">
+						<view class="num_edit">-</view>
+						<view class="num">10</view>
+						<view class="num_edit">+</view>
+					</view>
+				</view>
+			</view>
+		</view>
 	</view>
 </view>
 
