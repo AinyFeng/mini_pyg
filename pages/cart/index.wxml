@@ -36,7 +36,7 @@
 					<view class="goods_price">￥999</view>
 					<view class="cart_num_tool">
 						<view class="num_edit">-</view>
-						<view class="num">10</view>
+						<view class="goods_num">10</view>
 						<view class="num_edit">+</view>
 					</view>
 				</view>

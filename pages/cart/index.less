@@ -28,6 +28,8 @@
   }
   .cart_main{
     .cart_item{
+      padding: 10rpx;
+      border-bottom: 1rpx solid #ccc;
       display: flex;
       .cart_chk_wrap{
         flex: 1;
@@ -63,17 +65,26 @@
         justify-content: space-between;
         align-items: center;
         .goods_price{
-         
-
+         color: var(--themeColor);
+         font-size: 34rpx;
         }
         .cart_num_tool{
           display: flex;
-          justify-content: space-around;
-          align-items: center;
           .num_edit{
-
+            width: 55rpx;
+            height: 55rpx;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1rpx solid #ccc;
           }
-          .num{}
+          .goods_num{
+            width: 55rpx;
+            height: 55rpx;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
         }
       }
     }

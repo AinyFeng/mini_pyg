@@ -23,6 +23,8 @@
   font-size: 36rpx;
 }
 .cart_content .cart_main .cart_item {
+  padding: 10rpx;
+  border-bottom: 1rpx solid #ccc;
   display: flex;
 }
 .cart_content .cart_main .cart_item .cart_chk_wrap {
@@ -58,8 +60,25 @@
   justify-content: space-between;
   align-items: center;
 }
+.cart_content .cart_main .cart_info_wrap .goods_price_wrap .goods_price {
+  color: var(--themeColor);
+  font-size: 34rpx;
+}
 .cart_content .cart_main .cart_info_wrap .goods_price_wrap .cart_num_tool {
   display: flex;
-  justify-content: space-around;
+}
+.cart_content .cart_main .cart_info_wrap .goods_price_wrap .cart_num_tool .num_edit {
+  width: 55rpx;
+  height: 55rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid #ccc;
+}
+.cart_content .cart_main .cart_info_wrap .goods_price_wrap .cart_num_tool .goods_num {
+  width: 55rpx;
+  height: 55rpx;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
