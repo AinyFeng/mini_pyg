@@ -1,6 +1,12 @@
 // 同时发送异步代码的次数
 let ajaxTimes = 0;
 export const request = (params) => {
+  // 判断 url中是否带有 /my/ 请求的是私有的路径 带上header token
+  let header = {...params.header};
+  if (params.url.includes("/my/")) {
+    // 拼接header 带上token
+    header["Autorization"] = wx.getStorageSync("token");
+  }
   ajaxTimes++;
   return new Promise((resolve, reject) => {
     // 显示加载中效果
@@ -13,6 +19,7 @@ export const request = (params) => {
     const baseUrl = "https://api-hmugo-web.itheima.net/api/public/v1";
     wx.request({
       ...params,
+      header:header,
       url: baseUrl + params.url,
       success: (result) => {
         resolve(result.data.message);

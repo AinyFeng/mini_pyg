@@ -1,2 +1,4 @@
-<!--pages/user/index.wxml-->
-<text>pages/user/index.wxml</text>
+<navigator url="/pages/login/idnex">
+	登录
+</navigator>
+
