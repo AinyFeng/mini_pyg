@@ -2,10 +2,10 @@
 Page({
   // 获取用户信息
   handleGetUserInfo(e) {
-    // console.log(e);
+    console.log(e);
     const {userInfo} = e.detail;
     wx.setStorageSync('userInfo', userInfo);
-    wx.wx.navigateBack({
+    wx.navigateBack({
       delta: 1
     });
   }

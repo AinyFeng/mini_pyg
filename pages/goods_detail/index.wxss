@@ -36,6 +36,9 @@ page {
   text-align: center;
   border-left: 2rpx solid #000;
 }
+.goods_name_row .goods_collect .icon-shoucang1 {
+  color: orangered;
+}
 .goods_info .goods_info_title {
   font-size: 32rpx;
   color: var(--themeColor);

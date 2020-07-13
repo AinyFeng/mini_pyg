@@ -1,0 +1,124 @@
+page {
+  background-color: #edece8;
+}
+.user_info_wrap{
+  height: 45vh;
+  overflow: hidden;
+  background-color: var(--themeColor);
+  position: relative;
+  .user_img_wrap{
+    position: relative;
+    .user_bg{
+      height: 50vh;
+      // 高斯模糊
+      filter: blur(10rpx);
+    }
+    .user_info{
+      position: absolute;
+      left: 50%;
+      top: 30%;
+      transform: translateX(-50%);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .user_icon {
+        width: 150rpx;
+        height: 150rpx;
+        border-radius: 50%;
+      }
+      .user_name {
+        color: #ffffff;
+        margin-top: 40rpx;
+        font-size: 32rpx;
+      }
+      // z-index: 999;
+    }
+  }
+  .user_btn{
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%);
+    navigator{
+      padding: 20rpx;
+      border: 1rpx solid greenyellow;
+      color: greenyellow;
+      font-size: 38rpx;
+      padding: 30rpx;
+      border-radius: 10rpx;
+    }
+  }
+}
+.user_content {
+  position: relative;
+  margin-bottom: 20rpx;
+  .user_main{
+    color: #666;
+    position: absolute;
+    width: 90%;
+    top: -40rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    .history_wrap{
+      display: flex;
+      justify-content: space-around;
+      background-color: #fff;
+      navigator{
+        padding: 10rpx 0;
+        flex: 1;
+        text-align: center;
+        .his_num{
+          color: var(--themeColor);
+        }
+        .his_name{
+          font-size: 24rpx;
+        }
+      }
+    }
+    .orders_wrap{
+      background-color: #fff;
+      margin: 20rpx 0;
+      .orders_title{
+        padding: 20rpx;
+        border-bottom: 1px solid #ccc;
+      }
+      .order_content{
+        display: flex;
+        navigator{
+          flex: 1;
+          text-align: center;
+          padding: 10rpx 0;
+          .order_icon{
+            color: var(--themeColor);
+            font-size: 40rpx;
+          }
+          .order_name{
+            font-size: 24rpx;
+          }
+        }
+      }
+    }
+    .address_wrap{
+      padding: 20rpx;
+      background-color: #fff;
+    }
+    .app_info_wrap {
+      background-color: #fff;
+      margin: 20rpx 0;
+      .app_info_item{
+        padding: 20rpx;
+        border-bottom: 1rpx solid #cccccc;
+        &:nth-child(1) {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+    .recommend_wrap{
+      padding: 20rpx;
+      background-color: #fff;
+      margin-bottom: 100rpx;
+    }
+  }
+}

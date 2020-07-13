@@ -1,1 +1,122 @@
-/* pages/user/index.wxss */
+page {
+  background-color: #edece8;
+}
+.user_info_wrap {
+  height: 45vh;
+  overflow: hidden;
+  background-color: var(--themeColor);
+  position: relative;
+}
+.user_info_wrap .user_img_wrap {
+  position: relative;
+}
+.user_info_wrap .user_img_wrap .user_bg {
+  height: 50vh;
+  filter: blur(10rpx);
+}
+.user_info_wrap .user_img_wrap .user_info {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translateX(-50%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.user_info_wrap .user_img_wrap .user_info .user_icon {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+.user_info_wrap .user_img_wrap .user_info .user_name {
+  color: #ffffff;
+  margin-top: 40rpx;
+  font-size: 32rpx;
+}
+.user_info_wrap .user_btn {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-50%);
+}
+.user_info_wrap .user_btn navigator {
+  padding: 20rpx;
+  border: 1rpx solid greenyellow;
+  color: greenyellow;
+  font-size: 38rpx;
+  padding: 30rpx;
+  border-radius: 10rpx;
+}
+.user_content {
+  position: relative;
+  margin-bottom: 20rpx;
+}
+.user_content .user_main {
+  color: #666;
+  position: absolute;
+  width: 90%;
+  top: -40rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.user_content .user_main .history_wrap {
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+}
+.user_content .user_main .history_wrap navigator {
+  padding: 10rpx 0;
+  flex: 1;
+  text-align: center;
+}
+.user_content .user_main .history_wrap navigator .his_num {
+  color: var(--themeColor);
+}
+.user_content .user_main .history_wrap navigator .his_name {
+  font-size: 24rpx;
+}
+.user_content .user_main .orders_wrap {
+  background-color: #fff;
+  margin: 20rpx 0;
+}
+.user_content .user_main .orders_wrap .orders_title {
+  padding: 20rpx;
+  border-bottom: 1px solid #ccc;
+}
+.user_content .user_main .orders_wrap .order_content {
+  display: flex;
+}
+.user_content .user_main .orders_wrap .order_content navigator {
+  flex: 1;
+  text-align: center;
+  padding: 10rpx 0;
+}
+.user_content .user_main .orders_wrap .order_content navigator .order_icon {
+  color: var(--themeColor);
+  font-size: 40rpx;
+}
+.user_content .user_main .orders_wrap .order_content navigator .order_name {
+  font-size: 24rpx;
+}
+.user_content .user_main .address_wrap {
+  padding: 20rpx;
+  background-color: #fff;
+}
+.user_content .user_main .app_info_wrap {
+  background-color: #fff;
+  margin: 20rpx 0;
+}
+.user_content .user_main .app_info_wrap .app_info_item {
+  padding: 20rpx;
+  border-bottom: 1rpx solid #cccccc;
+}
+.user_content .user_main .app_info_wrap .app_info_item:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+}
+.user_content .user_main .recommend_wrap {
+  padding: 20rpx;
+  background-color: #fff;
+  margin-bottom: 100rpx;
+}
